@@ -29,6 +29,14 @@ int convert(int a[][10], int m, int n){
 void display(int a[][10], int k){
     for(int i=0; i<3; i++){
         printf("\n");
+        switch(i){
+            case 0: printf("Value  : ");
+                    break;
+            case 1: printf("Row    : ");
+                    break;
+            case 2: printf("Coloum : ");
+                    break;
+        }
         for(int j=0; j<k; j++){
             printf("%d\t", a[i][j]);
         }
@@ -45,4 +53,5 @@ void main(){
     int k = convert(a,m,n);
     printf("\nSparse Matrix\n");
     display(sparse,k);
+    printf("\n");
 }
