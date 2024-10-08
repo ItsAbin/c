@@ -77,10 +77,11 @@ void delete(int val){
             else
                 prev->link=curr->link;
             free(curr);
-            printf("%d deleted from list",val);
+            printf("%d deleted from list\n",val);
         }
     }
 }
+
 void display(){
     node* curr = head;
     if(head==NULL)
