@@ -17,9 +17,9 @@ int convert(int a[][10], int m, int n){
     for(int i=0;i<m;i++){
         for(int j=0; j<n; j++){
             if(a[i][j] != 0){
-                sparse[0][k]=a[i][j];
-                sparse[1][k]=i;
-                sparse[2][k++]=j;
+                sparse[k][0]=a[i][j];
+                sparse[k][1]=i;
+                sparse[k++][2]=j;
             }
         }
     }
@@ -27,17 +27,10 @@ int convert(int a[][10], int m, int n){
 }
 
 void display(int a[][10], int k){
-    for(int i=0; i<3; i++){
+    printf("Value\tRow\tColumn");
+    for(int i=0; i<k; i++){
         printf("\n");
-        switch(i){
-            case 0: printf("Value  : ");
-                    break;
-            case 1: printf("Row    : ");
-                    break;
-            case 2: printf("Coloum : ");
-                    break;
-        }
-        for(int j=0; j<k; j++){
+        for(int j=0; j<3; j++){
             printf("%d\t", a[i][j]);
         }
     }
