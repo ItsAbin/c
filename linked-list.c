@@ -29,8 +29,7 @@ void insertAfter(int val, int item){
         node* p = newnode(val);
         node* curr = head;
     if(head == NULL){
-        head=p;
-        printf("List Empty: %d inserted at front\n",val);
+        printf("List Empty\n",val);
     }
     else{
         while(curr != NULL && curr->info != item)
