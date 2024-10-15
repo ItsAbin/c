@@ -29,7 +29,7 @@ void insertAfter(int val, int item){
         node* p = newnode(val);
         node* curr = head;
     if(head == NULL){
-        printf("Error :( List doesn't exist\n",val);
+        printf("Error :( List doesn't exist\n");
     }
     else{
         while(curr != NULL && curr->info != item)
@@ -76,7 +76,7 @@ void delete(int item){
             else
                 prev->link=curr->link;
             free(curr);
-            printf("%d deleted from list\n",val);
+            printf("%d deleted from list\n",item);
         }
     }
 }
