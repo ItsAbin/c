@@ -29,7 +29,7 @@ void insertAfter(int val, int item){
         node* p = newnode(val);
         node* curr = head;
     if(head == NULL){
-        printf("List Empty\n",val);
+        printf("Error :( List doesn't exist\n",val);
     }
     else{
         while(curr != NULL && curr->info != item)
@@ -49,7 +49,7 @@ void insertLast(int val){
     node* p = newnode(val);
     node* curr = head;
     if(head == NULL)
-        printf("List Doesn't Exist\n");
+        printf("Error :( List doesn't exist\n");
     else{
         while(curr->link != NULL)
             curr = curr->link;
@@ -58,13 +58,13 @@ void insertLast(int val){
     }
 }
 
-void delete(int val){
+void delete(int item){
     node* curr = head;
     node* prev = NULL;
     if(head==NULL)
-        printf("List doesn't exist");
+        printf("Error :( List doesn't exist");
     else{
-        while(curr != NULL && curr->info != val){
+        while(curr != NULL && curr->info != item){
             prev=curr;
             curr=curr->link;
         }
@@ -84,7 +84,7 @@ void delete(int val){
 void display(){
     node* curr = head;
     if(head==NULL)
-        printf("Error :( List not found");
+        printf("Error :( List Empty");
     else{
         while(curr!=NULL){
             printf("%d -> ", curr->info);
@@ -115,8 +115,8 @@ void main(){
 			        insertAfter(val,item);
 				    break;
 	        case 4: printf("Enter Element: ");
-			        scanf("%d",&val);
-			        delete(val);
+			        scanf("%d",&item);
+			        delete(item);
 			        break;
 			case 5: display();
 			        break;
